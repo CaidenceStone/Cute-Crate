@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3908783527
+    locked: 0
+  - name: Closed Box
+    uniqueID: 3072050639
+    locked: 0
+  - name: Open Box
+    uniqueID: 4044801367
+    locked: 0
+  - name: Cute Things
+    uniqueID: 3573166297
+    locked: 0
+  - name: UI
+    uniqueID: 1524797299
+    locked: 0
