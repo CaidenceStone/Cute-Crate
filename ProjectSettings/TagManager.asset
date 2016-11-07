@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 3908783527
     locked: 0
+  - name: Shadow
+    uniqueID: 1018709165
+    locked: 0
   - name: Closed Box
     uniqueID: 3072050639
     locked: 0
