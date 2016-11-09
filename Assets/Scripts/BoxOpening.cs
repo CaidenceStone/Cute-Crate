@@ -7,10 +7,11 @@ public class BoxOpening : MonoBehaviour {
     public GameObject boxOpen;
     public GameObject cutie;
     public GameObject soundPlayer;
-    public float[] tierWeights;
+    public int[] tierWeights;
     public string cutieFilePath;
     public bool randomizeCutie;
     public int rarityTier;
+    public int[] numberOfImagesByTier = { 18, 8, 6 };
     private int highestTier;
     private SpriteRenderer cutieRenderer;
     private AudioSource revealSound;
@@ -80,9 +81,9 @@ public class BoxOpening : MonoBehaviour {
 
     int PickRandomTier()
     {
-        float dieRoll = Random.Range(0.0f, 1.0f);
+        int dieRoll = Random.Range(0, 100);
 
-        //rarityTier = 0;
+        rarityTier = 0;
         for (int currentTier = highestTier; currentTier > 0; currentTier--)
         {
             if (dieRoll < tierWeights[currentTier])
@@ -107,17 +108,17 @@ public class BoxOpening : MonoBehaviour {
         
         cutieFilePath += rarityTier.ToString() + "/";
 
-        int numberOfImages = 0;
-        if (Directory.Exists(Application.dataPath + "/Resources/" + cutieFilePath))
-        {
-            var info = new DirectoryInfo(Application.dataPath + "/Resources/" + cutieFilePath);
-            if (null != info)
-            {
-                numberOfImages = info.GetFiles().Length/2; // the other half are meta files
-                Debug.Log("Number of images in folder!... " + numberOfImages.ToString());
-            }
-        }
-        int cutieNumber = Random.Range(0, numberOfImages);
+        
+        //if (Directory.Exists(Application.dataPath + "/Resources/" + cutieFilePath))
+        //{
+        //    var info = new DirectoryInfo(Application.dataPath + "/Resources/" + cutieFilePath);
+        //    if (null != info)
+        //    {
+        //        numberOfImages = info.GetFiles().Length/2; // the other half are meta files
+        //        Debug.Log("Number of images in folder!... " + numberOfImages.ToString());
+        //    }
+        //}
+        int cutieNumber = Random.Range(0, numberOfImagesByTier[rarityTier]);
         cutieFilePath += cutieNumber.ToString();
         return cutieFilePath;
     }
