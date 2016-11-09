@@ -816,7 +816,7 @@ MonoBehaviour:
   cutieFilePath: 
   randomizeCutie: 1
   rarityTier: 0
-  numberOfImagesByTier: 120000000800000006000000
+  numberOfImagesByTier: 120000000800000009000000
 --- !u!1 &1611482214
 GameObject:
   m_ObjectHideFlags: 0
