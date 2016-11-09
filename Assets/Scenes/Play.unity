@@ -462,7 +462,7 @@ GameObject:
   - 4: {fileID: 801863564}
   - 212: {fileID: 801863565}
   m_Layer: 0
-  m_Name: ' BoxFront'
+  m_Name: BoxFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,6 +916,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1874460830}
+  - 114: {fileID: 1874460831}
   m_Layer: 0
   m_Name: Cute Things
   m_TagString: Untagged
@@ -937,6 +938,19 @@ Transform:
   - {fileID: 213223750}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1874460831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874460829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ead0be913753494ba4402367466ce0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxAngle: 9
+  Speed: 2
 --- !u!1 &2108119879
 GameObject:
   m_ObjectHideFlags: 0
