@@ -15,7 +15,7 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
-  m_ShowUnitySplashScreen: 1
+  m_ShowUnitySplashScreen: 0
   m_VirtualRealitySplashScreen: {fileID: 0}
   defaultScreenWidth: 800
   defaultScreenHeight: 800
@@ -48,9 +48,9 @@ PlayerSettings:
   submitAnalytics: 1
   usePlayerLog: 0
   bakeCollisionMeshes: 0
-  forceSingleInstance: 0
+  forceSingleInstance: 1
   resizableWindow: 1
-  useMacAppStoreValidation: 0
+  useMacAppStoreValidation: 1
   gpuSkinning: 0
   graphicsJobs: 0
   xboxPIXTextureCapture: 0
@@ -175,12 +175,13 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 0}
+  resolutionDialogBanner: {fileID: 2800000, guid: 157cb8db291f8194c9ee880a48ff8eed,
+    type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: e97c8e6a02782b546b142ad44c471ba9, type: 3}
+      m_Icon: {fileID: 2800000, guid: 13f200c57d18ecb438404896e9052f79, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
