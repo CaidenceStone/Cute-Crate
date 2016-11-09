@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.IO;
+using UnityEngine;
 
-public class BoxOpening : MonoBehaviour {
-
+public class BoxOpening : MonoBehaviour
+{
     public GameObject boxOpen;
     public GameObject cutie;
     public GameObject soundPlayer;
@@ -11,15 +9,14 @@ public class BoxOpening : MonoBehaviour {
     public string cutieFilePath;
     public bool randomizeCutie;
     public int rarityTier;
-    public int[] numberOfImagesByTier = { 18, 8, 6 };
+    public int[] numberOfImagesByTier = {18, 8, 6};
     private int highestTier;
     private SpriteRenderer cutieRenderer;
     private AudioSource revealSound;
 
-    // Use this for initialization
     void Start()
     {
-        highestTier = tierWeights.Length-1;
+        highestTier = tierWeights.Length - 1;
         if (null == boxOpen)
         {
             Debug.LogError("BoxOpen game object not attached to BoxClosed!");
@@ -49,7 +46,7 @@ public class BoxOpening : MonoBehaviour {
             }
         }
     }
-	
+
     void OnMouseDown()
     {
         // Hide closed box, show open box
@@ -69,16 +66,12 @@ public class BoxOpening : MonoBehaviour {
         AudioClip clip = Resources.Load(soundPath, typeof(AudioClip)) as AudioClip;
         revealSound.PlayOneShot(clip);
 
-        // Make cutie visible and play sound
+        // Make cutie visible, play sound, and start animation
         cutie.SetActive(true);
         revealSound.Play();
+
     }
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+    
     int PickRandomTier()
     {
         int dieRoll = Random.Range(0, 100);
@@ -92,22 +85,22 @@ public class BoxOpening : MonoBehaviour {
                 break;
             }
         }
+
         return rarityTier;
     }
 
-    string getRevealSoundPath( int rarityTier)
+    string getRevealSoundPath(int rarityTier)
     {
         return "Reveal Sounds/" + rarityTier.ToString();
     }
 
-    string getRandomCutiePath( int rarityTier)
+    string getRandomCutiePath(int rarityTier)
     {
         string cutieFilePath = "";
         cutieFilePath += "Cutie Sprites/Tier";
         //pick rarity tier
-        
-        cutieFilePath += rarityTier.ToString() + "/";
 
+        cutieFilePath += rarityTier + "/";
         
         //if (Directory.Exists(Application.dataPath + "/Resources/" + cutieFilePath))
         //{
@@ -122,5 +115,4 @@ public class BoxOpening : MonoBehaviour {
         cutieFilePath += cutieNumber.ToString();
         return cutieFilePath;
     }
-
 }
