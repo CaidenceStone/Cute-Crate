@@ -38,7 +38,6 @@ public class Wobble : MonoBehaviour
         else
         {
             gameObject.transform.Rotate(Vector3.forward * -(Speed * Time.deltaTime));
-            Debug.Log("@@ = " + gameObject.transform.rotation.eulerAngles.z);
             if (gameObject.transform.rotation.eulerAngles.z < _minAngle &&
                 gameObject.transform.rotation.eulerAngles.z > MaxAngle)
             {
@@ -46,10 +45,4 @@ public class Wobble : MonoBehaviour
             }
         }
     }
-}
-
-public enum RotationDirection
-{
-    CLOCKWISE,
-    COUNTER_CLOCKWISE
 }
