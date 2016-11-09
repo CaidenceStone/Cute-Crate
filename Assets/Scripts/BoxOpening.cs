@@ -4,6 +4,7 @@ public class BoxOpening : MonoBehaviour
 {
     public GameObject boxOpen;
     public GameObject cutie;
+    private JumpUp jumpUp;
     public GameObject soundPlayer;
     public int[] tierWeights;
     public string cutieFilePath;
@@ -19,23 +20,28 @@ public class BoxOpening : MonoBehaviour
         highestTier = tierWeights.Length - 1;
         if (null == boxOpen)
         {
-            Debug.LogError("BoxOpen game object not attached to BoxClosed!");
+            Debug.LogError("BoxOpen game object not attached to BoxOpening!");
         }
         if (null == cutie)
         {
-            Debug.LogError("Cutie game object not attached to BoxClosed!");
+            Debug.LogError("Cutie game object not attached to BoxOpening!");
         }
         else
         {
             cutieRenderer = cutie.GetComponent<SpriteRenderer>();
             if (null == cutieRenderer)
             {
-                Debug.LogError("Closed Box could not find SpriteRenderer on Cutie object!");
+                Debug.LogError("BoxOpening could not find SpriteRenderer on Cutie object!");
+            }
+            jumpUp = cutie.GetComponent<JumpUp>();
+            if (null == jumpUp)
+            {
+                Debug.LogError("BoxOpening could not find JumpUp on Cutie object!");
             }
         }
         if (null == soundPlayer)
         {
-            Debug.LogError("Sound Player game object not attached to BoxClosed!");
+            Debug.LogError("Sound Player game object not attached to BoxOpening!");
         }
         else
         {
@@ -69,9 +75,9 @@ public class BoxOpening : MonoBehaviour
         // Make cutie visible, play sound, and start animation
         cutie.SetActive(true);
         revealSound.Play();
-
+        jumpUp.Animate();
     }
-    
+
     int PickRandomTier()
     {
         int dieRoll = Random.Range(0, 100);
